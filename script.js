@@ -25,7 +25,8 @@ async function loadCurrencies () {
       optionTo.textContent = `${code} - ${name}`
       toCurrencySelect.appendChild(optionTo)
     }
-    selectLocalCurrency()
+    selectLocalCurrency();
+    convertCurrency();
   } catch (error) {
     console.error('Error al cargar las monedas:', error)
   }
@@ -47,7 +48,8 @@ function selectLocalCurrency () {
   // Seleccionar la opción correspondiente en el select
   for (let option of fromCurrencySelect.options) {
     if (option.value === localCurrencyCode) {
-      fromCurrencySelect.value = localCurrencyCode // Seleccionar la opción
+      fromCurrencySelect.value = localCurrencyCode; 
+      toCurrencySelect.value = localCurrencyCode;
       break // Salir del bucle una vez encontrada
     }
   }
@@ -93,4 +95,3 @@ async function convertCurrency () {
 }
 
 loadCurrencies();
-convertCurrency();
