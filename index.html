@@ -18,6 +18,7 @@
             id="amount"
             placeholder="Ingresa la cantidad"
             value="1"
+            onchange="convertCurrency()"
           />
         </div>
         <div class="control">
@@ -25,14 +26,15 @@
           <select id="fromCurrency"></select>
           <span id="fromCurrencyResult"></span>
         </div>
+        <button id="swapButton" onclick="swapCurrencies()" >Intercambiar</button>
         <div class="control">
           <label for="toCurrency">Convertir a: </label>
           <select id="toCurrency"></select>
           <span id="toCurrencyResult"></span>
         </div>
+        <button onclick="convertCurrency()">Convertir</button>
       </div>
       <div id="result" class="result"></div>
-      <button onclick="convertCurrency()">Convertir</button>
     </div>
 
     <script src="script.js"></script>

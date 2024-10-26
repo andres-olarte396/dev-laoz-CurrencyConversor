@@ -66,6 +66,14 @@ function formatCurrency (currencyCode, value) {
   return formatter.format(value)
 }
 
+// Función para intercambiar divisas
+function swapCurrencies() {
+  const temp = fromCurrencySelect.value;
+  fromCurrencySelect.value = toCurrencySelect.value;
+  toCurrencySelect.value = temp;
+  convertCurrency();
+}
+
 // Función para convertir monedas
 async function convertCurrency () {
   const amount = document.getElementById('amount').value
