@@ -4,39 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conversor de Monedas</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../dev-laoz-WaveArtCSS/src/theme.css" />
+    <link rel="stylesheet" href="../dev-laoz-WaveArtCSS/src/base.css" />
+    <link rel="stylesheet" href="../dev-laoz-WaveArtCSS/src/components.css" />
   </head>
   <body>
-    <div class="converter">
+    <header>
       <h1>Conversor de Monedas</h1>
-      <p>Convierte cualquier moneda a cualquier otra moneda en tiempo real.</p>
-      <div class="form">
-        <div class="control">
-          <label for="amount">Cantidad:</label>
-          <input
-            type="number"
-            id="amount"
-            placeholder="Ingresa la cantidad"
-            value="1"
-            onchange="convertCurrency()"
-          />
+      <p>
+        Convierte cualquier moneda a cualquier otra moneda en tiempo real.
+      </p>
+    </header>
+    <main>
+      <div class="converter">
+      
+        <div class="form">
+          <div class="control">
+            <label for="amount">Cantidad:</label>
+            <input
+              type="number"
+              id="amount"
+              placeholder="Ingresa la cantidad"
+              value="1"
+              onchange="convertCurrency()"
+            />
+          </div>
+          <div class="control">
+            <label for="fromCurrency">Convertir de:</label>
+            <select id="fromCurrency"></select>
+            <span id="fromCurrencyResult"></span>
+          </div>
+          <button id="swapButton" onclick="swapCurrencies()">
+            Intercambiar
+          </button>
+          <div class="control">
+            <label for="toCurrency">Convertir a: </label>
+            <select id="toCurrency"></select>
+            <span id="toCurrencyResult"></span>
+          </div>
+          <button onclick="convertCurrency()">Convertir</button>
         </div>
-        <div class="control">
-          <label for="fromCurrency">Convertir de:</label>
-          <select id="fromCurrency"></select>
-          <span id="fromCurrencyResult"></span>
-        </div>
-        <button id="swapButton" onclick="swapCurrencies()" >Intercambiar</button>
-        <div class="control">
-          <label for="toCurrency">Convertir a: </label>
-          <select id="toCurrency"></select>
-          <span id="toCurrencyResult"></span>
-        </div>
-        <button onclick="convertCurrency()">Convertir</button>
+        <div id="result" class="result"></div>
       </div>
-      <div id="result" class="result"></div>
-    </div>
-
+    </main>
+    <footer>
+      <p>© 2024 Mi Negocio. Todos los derechos reservados.</p>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
